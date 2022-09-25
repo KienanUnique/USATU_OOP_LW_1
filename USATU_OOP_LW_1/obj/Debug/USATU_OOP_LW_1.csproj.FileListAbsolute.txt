@@ -1,0 +1,8 @@
+C:\Users\wi\RiderProjects\USATU_OOP_LW_1\USATU_OOP_LW_1\bin\Debug\USATU_OOP_LW_1.exe.config
+C:\Users\wi\RiderProjects\USATU_OOP_LW_1\USATU_OOP_LW_1\bin\Debug\USATU_OOP_LW_1.exe
+C:\Users\wi\RiderProjects\USATU_OOP_LW_1\USATU_OOP_LW_1\bin\Debug\USATU_OOP_LW_1.pdb
+C:\Users\wi\RiderProjects\USATU_OOP_LW_1\USATU_OOP_LW_1\obj\Debug\USATU_OOP_LW_1.csprojResolveAssemblyReference.cache
+C:\Users\wi\RiderProjects\USATU_OOP_LW_1\USATU_OOP_LW_1\obj\Debug\USATU_OOP_LW_1.Properties.Resources.resources
+C:\Users\wi\RiderProjects\USATU_OOP_LW_1\USATU_OOP_LW_1\obj\Debug\USATU_OOP_LW_1.csproj.GenerateResource.Cache
+C:\Users\wi\RiderProjects\USATU_OOP_LW_1\USATU_OOP_LW_1\obj\Debug\USATU_OOP_LW_1.exe
+C:\Users\wi\RiderProjects\USATU_OOP_LW_1\USATU_OOP_LW_1\obj\Debug\USATU_OOP_LW_1.pdb
