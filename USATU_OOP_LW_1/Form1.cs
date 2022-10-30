@@ -30,16 +30,26 @@ namespace USATU_OOP_LW_1
             labelMousePositionInfo.Text = "Mouse (" + e.X + "; " + e.Y + ")";
         }
 
+        private void ButtonSelfDelete(object sender, MouseEventArgs e)
+        {
+            var buttonToDelete = sender as Button;
+            if (buttonToDelete != null)
+            {
+                Controls.Remove(buttonToDelete);
+            }
+        }
+
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
             labelMouseClickInfo.Text = "Mouse click (" + e.X + "; " + e.Y + ")";
 
-            var labelOnClick = new Label();
-            labelOnClick.Size = new Size(90, 23);
-            labelOnClick.Text = "Click";
-            labelOnClick.Location = new Point(e.X - labelOnClick.Size.Width / 2, e.Y - labelOnClick.Size.Height / 2);
-            labelOnClick.TextAlign = ContentAlignment.MiddleCenter;
-            Controls.Add(labelOnClick);
+            var buttonOnClick = new Button();
+            buttonOnClick.Size = new Size(90, 23);
+            buttonOnClick.Text = "Click";
+            buttonOnClick.Location = new Point(e.X - buttonOnClick.Size.Width / 2, e.Y - buttonOnClick.Size.Height / 2);
+            buttonOnClick.TextAlign = ContentAlignment.MiddleCenter;
+            buttonOnClick.MouseClick += ButtonSelfDelete;
+            Controls.Add(buttonOnClick);
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)

@@ -91,7 +91,7 @@
             // 
             // labelMousePositionInfo
             // 
-            this.labelMousePositionInfo.Location = new System.Drawing.Point(12, 9);
+            this.labelMousePositionInfo.Location = new System.Drawing.Point(9, 9);
             this.labelMousePositionInfo.Name = "labelMousePositionInfo";
             this.labelMousePositionInfo.Size = new System.Drawing.Size(157, 23);
             this.labelMousePositionInfo.TabIndex = 1;
@@ -108,7 +108,7 @@
             // 
             // labelMouseClickInfo
             // 
-            this.labelMouseClickInfo.Location = new System.Drawing.Point(12, 32);
+            this.labelMouseClickInfo.Location = new System.Drawing.Point(9, 32);
             this.labelMouseClickInfo.Name = "labelMouseClickInfo";
             this.labelMouseClickInfo.Size = new System.Drawing.Size(157, 23);
             this.labelMouseClickInfo.TabIndex = 1;
@@ -120,7 +120,7 @@
             this.groupBoxColorText.Controls.Add(this.radioButtonBlue);
             this.groupBoxColorText.Controls.Add(this.radioButtonGreen);
             this.groupBoxColorText.Controls.Add(this.radioButtonRed);
-            this.groupBoxColorText.Location = new System.Drawing.Point(175, 99);
+            this.groupBoxColorText.Location = new System.Drawing.Point(172, 99);
             this.groupBoxColorText.Name = "groupBoxColorText";
             this.groupBoxColorText.Size = new System.Drawing.Size(157, 114);
             this.groupBoxColorText.TabIndex = 2;
@@ -190,7 +190,7 @@
             // 
             this.groupBoxPressKeyCheck.Controls.Add(this.textBoxKeyPressChecker);
             this.groupBoxPressKeyCheck.Controls.Add(this.labelKeyPressInfo);
-            this.groupBoxPressKeyCheck.Location = new System.Drawing.Point(175, 12);
+            this.groupBoxPressKeyCheck.Location = new System.Drawing.Point(172, 12);
             this.groupBoxPressKeyCheck.Name = "groupBoxPressKeyCheck";
             this.groupBoxPressKeyCheck.Size = new System.Drawing.Size(192, 81);
             this.groupBoxPressKeyCheck.TabIndex = 3;
@@ -214,7 +214,7 @@
             // 
             // labelCountOfTicks
             // 
-            this.labelCountOfTicks.Location = new System.Drawing.Point(12, 54);
+            this.labelCountOfTicks.Location = new System.Drawing.Point(9, 54);
             this.labelCountOfTicks.Name = "labelCountOfTicks";
             this.labelCountOfTicks.Size = new System.Drawing.Size(157, 23);
             this.labelCountOfTicks.TabIndex = 1;
@@ -235,7 +235,7 @@
             // 
             this.groupBoxRolls.Controls.Add(this.labelSelectedRolls);
             this.groupBoxRolls.Controls.Add(this.checkedListBoxRolls);
-            this.groupBoxRolls.Location = new System.Drawing.Point(12, 130);
+            this.groupBoxRolls.Location = new System.Drawing.Point(9, 130);
             this.groupBoxRolls.Name = "groupBoxRolls";
             this.groupBoxRolls.Size = new System.Drawing.Size(136, 210);
             this.groupBoxRolls.TabIndex = 5;
@@ -253,7 +253,7 @@
             // linkLabelRickRoll
             // 
             this.linkLabelRickRoll.LinkArea = new System.Windows.Forms.LinkArea(10, 4);
-            this.linkLabelRickRoll.Location = new System.Drawing.Point(12, 107);
+            this.linkLabelRickRoll.Location = new System.Drawing.Point(9, 107);
             this.linkLabelRickRoll.Name = "linkLabelRickRoll";
             this.linkLabelRickRoll.Size = new System.Drawing.Size(123, 20);
             this.linkLabelRickRoll.TabIndex = 6;
@@ -267,7 +267,7 @@
             this.groupBoxChangeProgressBar.Controls.Add(this.buttonPlusTen);
             this.groupBoxChangeProgressBar.Controls.Add(this.buttonMinusTen);
             this.groupBoxChangeProgressBar.Controls.Add(this.progressBar);
-            this.groupBoxChangeProgressBar.Location = new System.Drawing.Point(175, 353);
+            this.groupBoxChangeProgressBar.Location = new System.Drawing.Point(172, 353);
             this.groupBoxChangeProgressBar.Name = "groupBoxChangeProgressBar";
             this.groupBoxChangeProgressBar.Size = new System.Drawing.Size(190, 87);
             this.groupBoxChangeProgressBar.TabIndex = 7;
@@ -303,7 +303,7 @@
             // 
             // checkBoxAgreement
             // 
-            this.checkBoxAgreement.Location = new System.Drawing.Point(12, 80);
+            this.checkBoxAgreement.Location = new System.Drawing.Point(9, 80);
             this.checkBoxAgreement.Name = "checkBoxAgreement";
             this.checkBoxAgreement.Size = new System.Drawing.Size(104, 24);
             this.checkBoxAgreement.TabIndex = 8;
@@ -314,7 +314,7 @@
             // treeViewNumbers
             // 
             this.treeViewNumbers.CheckBoxes = true;
-            this.treeViewNumbers.Location = new System.Drawing.Point(373, 12);
+            this.treeViewNumbers.Location = new System.Drawing.Point(370, 12);
             this.treeViewNumbers.Name = "treeViewNumbers";
             treeNode1.Name = "oneHundred";
             treeNode1.Text = "100";
@@ -355,7 +355,7 @@
             this.groupBoxButtonsEvents.Controls.Add(this.buttonForEventsTest3);
             this.groupBoxButtonsEvents.Controls.Add(this.buttonForEventsTest2);
             this.groupBoxButtonsEvents.Controls.Add(this.buttonForEventsTest1);
-            this.groupBoxButtonsEvents.Location = new System.Drawing.Point(379, 189);
+            this.groupBoxButtonsEvents.Location = new System.Drawing.Point(376, 189);
             this.groupBoxButtonsEvents.Name = "groupBoxButtonsEvents";
             this.groupBoxButtonsEvents.Size = new System.Drawing.Size(200, 171);
             this.groupBoxButtonsEvents.TabIndex = 9;
@@ -429,7 +429,7 @@
             this.groupBoxDropDownList.Controls.Add(this.textBoxForNewComboBoxItem);
             this.groupBoxDropDownList.Controls.Add(this.labelSelectedInComboBox);
             this.groupBoxDropDownList.Controls.Add(this.comboBox);
-            this.groupBoxDropDownList.Location = new System.Drawing.Point(175, 219);
+            this.groupBoxDropDownList.Location = new System.Drawing.Point(172, 219);
             this.groupBoxDropDownList.Name = "groupBoxDropDownList";
             this.groupBoxDropDownList.Size = new System.Drawing.Size(192, 128);
             this.groupBoxDropDownList.TabIndex = 10;
