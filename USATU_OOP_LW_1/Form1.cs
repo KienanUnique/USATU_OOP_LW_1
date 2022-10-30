@@ -10,12 +10,19 @@ namespace USATU_OOP_LW_1
 {
     public partial class Form1 : Form
     {
+        private const string RickRollLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         private int _countOfTicks = 0;
         private SortedSet<int> _selectedRollsIndexes = new SortedSet<int>();
 
         public Form1()
         {
             InitializeComponent();
+
+            buttonForEventsTestMain.MouseClick += buttonForEventsTest1_MouseClick;
+            buttonForEventsTestMain.MouseClick += buttonForEventsTest2_MouseClick;
+            buttonForEventsTestMain.MouseClick += buttonForEventsTest3_MouseClick;
+            buttonForEventsTestMain.MouseClick += buttonForEventsTest4_MouseClick;
+            buttonForEventsTestMain.MouseClick += buttonForEventsTest5_MouseClick;
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -68,7 +75,7 @@ namespace USATU_OOP_LW_1
 
         private void linkLabelRickRoll_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            Process.Start(RickRollLink);
         }
 
         private void UpdateSelectedRollsText()
@@ -125,6 +132,62 @@ namespace USATU_OOP_LW_1
             else
             {
                 checkBoxAgreement.Text += "False)";
+            }
+        }
+
+        private void treeViewNumbers_AfterCheck(object sender, TreeViewEventArgs e)
+        {
+            if (e.Node.GetNodeCount(false) != 0)
+            {
+                for (var i = 0; i < e.Node.GetNodeCount(false); i++)
+                {
+                    e.Node.Nodes[i].Checked = e.Node.Checked;
+                }
+            }
+        }
+
+        private void buttonForEventsTest_MouseClick(object sender, MouseEventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null) button.Text = "Clicked";
+        }
+
+        private void buttonForEventsTest1_MouseClick(object sender, MouseEventArgs e)
+        {
+            buttonForEventsTest_MouseClick(buttonForEventsTest1, e);
+        }
+
+        private void buttonForEventsTest2_MouseClick(object sender, MouseEventArgs e)
+        {
+            buttonForEventsTest_MouseClick(buttonForEventsTest2, e);
+        }
+
+        private void buttonForEventsTest3_MouseClick(object sender, MouseEventArgs e)
+        {
+            buttonForEventsTest_MouseClick(buttonForEventsTest3, e);
+        }
+
+        private void buttonForEventsTest4_MouseClick(object sender, MouseEventArgs e)
+        {
+            buttonForEventsTest_MouseClick(buttonForEventsTest4, e);
+        }
+
+        private void buttonForEventsTest5_MouseClick(object sender, MouseEventArgs e)
+        {
+            buttonForEventsTest_MouseClick(buttonForEventsTest5, e);
+        }
+
+        private void comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            labelSelectedComboBoxItem.Text = "Selected: " + comboBox.SelectedItem;
+        }
+
+        private void buttonAddItemToComboBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (textBoxForNewComboBoxItem.Text != string.Empty)
+            {
+                comboBox.Items.Add(textBoxForNewComboBoxItem.Text);
+                textBoxForNewComboBoxItem.Clear();
             }
         }
     }
