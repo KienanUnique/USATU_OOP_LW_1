@@ -80,6 +80,8 @@
             this.textBoxForNewComboBoxItem = new System.Windows.Forms.TextBox();
             this.labelSelectedInComboBox = new System.Windows.Forms.Label();
             this.comboBox = new System.Windows.Forms.ComboBox();
+            this.panelForMovingText = new System.Windows.Forms.Panel();
+            this.timerMovingTextPanelUpdate = new System.Timers.Timer();
             this.groupBoxColorText.SuspendLayout();
             this.groupBoxPressKeyCheck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.timerSecondsFromStart)).BeginInit();
@@ -87,6 +89,7 @@
             this.groupBoxChangeProgressBar.SuspendLayout();
             this.groupBoxButtonsEvents.SuspendLayout();
             this.groupBoxDropDownList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.timerMovingTextPanelUpdate)).BeginInit();
             this.SuspendLayout();
             // 
             // labelMousePositionInfo
@@ -218,7 +221,7 @@
             this.labelCountOfTicks.Name = "labelCountOfTicks";
             this.labelCountOfTicks.Size = new System.Drawing.Size(157, 23);
             this.labelCountOfTicks.TabIndex = 1;
-            this.labelCountOfTicks.Text = "Count of ticks: 0";
+            this.labelCountOfTicks.Text = "Seconds from start: 0";
             // 
             // checkedListBoxRolls
             // 
@@ -267,7 +270,7 @@
             this.groupBoxChangeProgressBar.Controls.Add(this.buttonPlusTen);
             this.groupBoxChangeProgressBar.Controls.Add(this.buttonMinusTen);
             this.groupBoxChangeProgressBar.Controls.Add(this.progressBar);
-            this.groupBoxChangeProgressBar.Location = new System.Drawing.Point(172, 353);
+            this.groupBoxChangeProgressBar.Location = new System.Drawing.Point(9, 353);
             this.groupBoxChangeProgressBar.Name = "groupBoxChangeProgressBar";
             this.groupBoxChangeProgressBar.Size = new System.Drawing.Size(190, 87);
             this.groupBoxChangeProgressBar.TabIndex = 7;
@@ -487,12 +490,28 @@
             this.comboBox.TabIndex = 0;
             this.comboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox_SelectedIndexChanged);
             // 
+            // panelForMovingText
+            // 
+            this.panelForMovingText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelForMovingText.Location = new System.Drawing.Point(582, 12);
+            this.panelForMovingText.Name = "panelForMovingText";
+            this.panelForMovingText.Size = new System.Drawing.Size(117, 348);
+            this.panelForMovingText.TabIndex = 11;
+            // 
+            // timerMovingTextPanelUpdate
+            // 
+            this.timerMovingTextPanelUpdate.Enabled = true;
+            this.timerMovingTextPanelUpdate.Interval = 50D;
+            this.timerMovingTextPanelUpdate.SynchronizingObject = this;
+            this.timerMovingTextPanelUpdate.Elapsed += new System.Timers.ElapsedEventHandler(this.timerMovingTextPanelUpdate_Elapsed);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(602, 472);
+            this.ClientSize = new System.Drawing.Size(711, 472);
+            this.Controls.Add(this.panelForMovingText);
             this.Controls.Add(this.groupBoxDropDownList);
             this.Controls.Add(this.groupBoxButtonsEvents);
             this.Controls.Add(this.linkLabelRickRoll);
@@ -519,8 +538,13 @@
             this.groupBoxButtonsEvents.ResumeLayout(false);
             this.groupBoxDropDownList.ResumeLayout(false);
             this.groupBoxDropDownList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.timerMovingTextPanelUpdate)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Timers.Timer timerMovingTextPanelUpdate;
+
+        private System.Windows.Forms.Panel panelForMovingText;
 
         private System.Windows.Forms.TextBox textBoxForNewComboBoxItem;
         private System.Windows.Forms.Button buttonAddItemToComboBox;

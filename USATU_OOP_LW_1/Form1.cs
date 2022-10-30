@@ -11,8 +11,13 @@ namespace USATU_OOP_LW_1
     public partial class Form1 : Form
     {
         private const string RickRollLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-        private int _countOfTicks = 0;
+        private int _countOfSeconds = 0;
         private SortedSet<int> _selectedRollsIndexes = new SortedSet<int>();
+
+        private const int MovingTextDownOffset = 60;
+        private const int MovingTextStep = 10;
+        private Point _currentMovingTextPosition;
+        private bool _isMovingDown = false;
 
         public Form1()
         {
@@ -23,6 +28,9 @@ namespace USATU_OOP_LW_1
             buttonForEventsTestMain.MouseClick += buttonForEventsTest3_MouseClick;
             buttonForEventsTestMain.MouseClick += buttonForEventsTest4_MouseClick;
             buttonForEventsTestMain.MouseClick += buttonForEventsTest5_MouseClick;
+
+            _currentMovingTextPosition = new Point(panelForMovingText.Size.Width / 2, 0);
+            panelForMovingText.Paint += DrawMovingText;
         }
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
@@ -79,8 +87,41 @@ namespace USATU_OOP_LW_1
 
         private void timerSecondsFromStart_Elapsed(object sender, ElapsedEventArgs e)
         {
-            _countOfTicks++;
-            labelCountOfTicks.Text = "Count of ticks: " + _countOfTicks;
+            _countOfSeconds++;
+            labelCountOfTicks.Text = "Seconds from start: " + _countOfSeconds;
+        }
+
+        private void timerMovingTextPanelUpdate_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            panelForMovingText.Invalidate();
+        }
+
+        private void UpdateMovingTextLocation()
+        {
+            if (_isMovingDown)
+            {
+                _currentMovingTextPosition.Y += MovingTextStep;
+            }
+            else
+            {
+                _currentMovingTextPosition.Y -= MovingTextStep;
+            }
+
+            if (_currentMovingTextPosition.Y >= panelForMovingText.Size.Height - MovingTextDownOffset)
+            {
+                _isMovingDown = false;
+            }
+            else if (_currentMovingTextPosition.Y <= 0)
+            {
+                _isMovingDown = true;
+            }
+        }
+
+        private void DrawMovingText(object sender, PaintEventArgs e)
+        {
+            var g = e.Graphics;
+            UpdateMovingTextLocation();
+            g.DrawString("@\n |\n |\n@", Font, Brushes.Black, _currentMovingTextPosition);
         }
 
         private void linkLabelRickRoll_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
