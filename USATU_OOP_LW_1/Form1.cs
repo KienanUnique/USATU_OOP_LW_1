@@ -104,5 +104,28 @@ namespace USATU_OOP_LW_1
 
             UpdateSelectedRollsText();
         }
+
+        private void buttonMinusTen_MouseClick(object sender, MouseEventArgs e)
+        {
+            progressBar.Increment(-10);
+        }
+
+        private void buttonPlusTen_MouseClick(object sender, MouseEventArgs e)
+        {
+            progressBar.PerformStep();
+        }
+
+        private void checkBoxAgreement_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxAgreement.Text = "I agree (";
+            if (checkBoxAgreement.Checked)
+            {
+                checkBoxAgreement.Text += "True)";
+            }
+            else
+            {
+                checkBoxAgreement.Text += "False)";
+            }
+        }
     }
 }

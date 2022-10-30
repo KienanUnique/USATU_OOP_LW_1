@@ -47,10 +47,16 @@
             this.groupBoxRolls = new System.Windows.Forms.GroupBox();
             this.labelSelectedRolls = new System.Windows.Forms.Label();
             this.linkLabelRickRoll = new System.Windows.Forms.LinkLabel();
+            this.groupBoxChangeProgressBar = new System.Windows.Forms.GroupBox();
+            this.buttonPlusTen = new System.Windows.Forms.Button();
+            this.buttonMinusTen = new System.Windows.Forms.Button();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.checkBoxAgreement = new System.Windows.Forms.CheckBox();
             this.groupBoxColorText.SuspendLayout();
             this.groupBoxPressKeyCheck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.timerSecondsFromStart)).BeginInit();
             this.groupBoxRolls.SuspendLayout();
+            this.groupBoxChangeProgressBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelMousePositionInfo
@@ -199,7 +205,7 @@
             // 
             this.groupBoxRolls.Controls.Add(this.labelSelectedRolls);
             this.groupBoxRolls.Controls.Add(this.checkedListBoxRolls);
-            this.groupBoxRolls.Location = new System.Drawing.Point(12, 99);
+            this.groupBoxRolls.Location = new System.Drawing.Point(12, 126);
             this.groupBoxRolls.Name = "groupBoxRolls";
             this.groupBoxRolls.Size = new System.Drawing.Size(136, 210);
             this.groupBoxRolls.TabIndex = 5;
@@ -226,12 +232,63 @@
             this.linkLabelRickRoll.UseCompatibleTextRendering = true;
             this.linkLabelRickRoll.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRickRoll_LinkClicked);
             // 
+            // groupBoxChangeProgressBar
+            // 
+            this.groupBoxChangeProgressBar.Controls.Add(this.buttonPlusTen);
+            this.groupBoxChangeProgressBar.Controls.Add(this.buttonMinusTen);
+            this.groupBoxChangeProgressBar.Controls.Add(this.progressBar);
+            this.groupBoxChangeProgressBar.Location = new System.Drawing.Point(313, 222);
+            this.groupBoxChangeProgressBar.Name = "groupBoxChangeProgressBar";
+            this.groupBoxChangeProgressBar.Size = new System.Drawing.Size(196, 87);
+            this.groupBoxChangeProgressBar.TabIndex = 7;
+            this.groupBoxChangeProgressBar.TabStop = false;
+            this.groupBoxChangeProgressBar.Text = "Change progress bar";
+            // 
+            // buttonPlusTen
+            // 
+            this.buttonPlusTen.Location = new System.Drawing.Point(115, 19);
+            this.buttonPlusTen.Name = "buttonPlusTen";
+            this.buttonPlusTen.Size = new System.Drawing.Size(75, 23);
+            this.buttonPlusTen.TabIndex = 1;
+            this.buttonPlusTen.Text = "+10";
+            this.buttonPlusTen.UseVisualStyleBackColor = true;
+            this.buttonPlusTen.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonPlusTen_MouseClick);
+            // 
+            // buttonMinusTen
+            // 
+            this.buttonMinusTen.Location = new System.Drawing.Point(6, 19);
+            this.buttonMinusTen.Name = "buttonMinusTen";
+            this.buttonMinusTen.Size = new System.Drawing.Size(75, 23);
+            this.buttonMinusTen.TabIndex = 1;
+            this.buttonMinusTen.Text = "-10";
+            this.buttonMinusTen.UseVisualStyleBackColor = true;
+            this.buttonMinusTen.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonMinusTen_MouseClick);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(6, 48);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(183, 23);
+            this.progressBar.TabIndex = 0;
+            // 
+            // checkBoxAgreement
+            // 
+            this.checkBoxAgreement.Location = new System.Drawing.Point(12, 96);
+            this.checkBoxAgreement.Name = "checkBoxAgreement";
+            this.checkBoxAgreement.Size = new System.Drawing.Size(104, 24);
+            this.checkBoxAgreement.TabIndex = 8;
+            this.checkBoxAgreement.Text = "I agree (False)";
+            this.checkBoxAgreement.UseVisualStyleBackColor = true;
+            this.checkBoxAgreement.CheckedChanged += new System.EventHandler(this.checkBoxAgreement_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(517, 450);
+            this.Controls.Add(this.checkBoxAgreement);
+            this.Controls.Add(this.groupBoxChangeProgressBar);
             this.Controls.Add(this.linkLabelRickRoll);
             this.Controls.Add(this.groupBoxRolls);
             this.Controls.Add(this.groupBoxPressKeyCheck);
@@ -248,8 +305,16 @@
             this.groupBoxPressKeyCheck.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.timerSecondsFromStart)).EndInit();
             this.groupBoxRolls.ResumeLayout(false);
+            this.groupBoxChangeProgressBar.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.CheckBox checkBoxAgreement;
+
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.GroupBox groupBoxChangeProgressBar;
+        private System.Windows.Forms.Button buttonMinusTen;
+        private System.Windows.Forms.Button buttonPlusTen;
 
         private System.Windows.Forms.LinkLabel linkLabelRickRoll;
 
