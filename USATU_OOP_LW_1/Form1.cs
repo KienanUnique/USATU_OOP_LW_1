@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.Text;
 using System.Timers;
 using System.Windows.Forms;
 
@@ -8,6 +11,7 @@ namespace USATU_OOP_LW_1
     public partial class Form1 : Form
     {
         private int _countOfTicks = 0;
+        private SortedSet<int> _selectedRollsIndexes = new SortedSet<int>();
 
         public Form1()
         {
@@ -60,6 +64,45 @@ namespace USATU_OOP_LW_1
         {
             _countOfTicks++;
             labelCountOfTicks.Text = "Count of ticks: " + _countOfTicks;
+        }
+
+        private void linkLabelRickRoll_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+        }
+
+        private void UpdateSelectedRollsText()
+        {
+            if (_selectedRollsIndexes.Count == 0)
+            {
+                labelSelectedRolls.Text = "Nothing is selected";
+            }
+            else
+            {
+                var newSelectedRollsText = new StringBuilder("Selected Rolls:\n");
+                foreach (var index in _selectedRollsIndexes)
+                {
+                    newSelectedRollsText.Append("* ");
+                    newSelectedRollsText.Append(checkedListBoxRolls.Items[index]);
+                    newSelectedRollsText.Append("\n");
+                }
+
+                labelSelectedRolls.Text = newSelectedRollsText.ToString();
+            }
+        }
+
+        private void checkedListBoxRolls_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+            {
+                _selectedRollsIndexes.Add(e.Index);
+            }
+            else
+            {
+                _selectedRollsIndexes.Remove(e.Index);
+            }
+
+            UpdateSelectedRollsText();
         }
     }
 }

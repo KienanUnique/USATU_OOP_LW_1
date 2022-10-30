@@ -43,9 +43,14 @@
             this.textBoxKeyPressChecker = new System.Windows.Forms.TextBox();
             this.timerSecondsFromStart = new System.Timers.Timer();
             this.labelCountOfTicks = new System.Windows.Forms.Label();
+            this.checkedListBoxRolls = new System.Windows.Forms.CheckedListBox();
+            this.groupBoxRolls = new System.Windows.Forms.GroupBox();
+            this.labelSelectedRolls = new System.Windows.Forms.Label();
+            this.linkLabelRickRoll = new System.Windows.Forms.LinkLabel();
             this.groupBoxColorText.SuspendLayout();
             this.groupBoxPressKeyCheck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.timerSecondsFromStart)).BeginInit();
+            this.groupBoxRolls.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelMousePositionInfo
@@ -179,12 +184,56 @@
             this.labelCountOfTicks.TabIndex = 1;
             this.labelCountOfTicks.Text = "Count of ticks: 0";
             // 
+            // checkedListBoxRolls
+            // 
+            this.checkedListBoxRolls.CheckOnClick = true;
+            this.checkedListBoxRolls.FormattingEnabled = true;
+            this.checkedListBoxRolls.Items.AddRange(new object[] {"Ёбоши", "ЁбиМокуёби", "ЁбиСуёби", "Куни Ли", "Бич"});
+            this.checkedListBoxRolls.Location = new System.Drawing.Point(6, 19);
+            this.checkedListBoxRolls.Name = "checkedListBoxRolls";
+            this.checkedListBoxRolls.Size = new System.Drawing.Size(120, 94);
+            this.checkedListBoxRolls.TabIndex = 4;
+            this.checkedListBoxRolls.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxRolls_ItemCheck);
+            // 
+            // groupBoxRolls
+            // 
+            this.groupBoxRolls.Controls.Add(this.labelSelectedRolls);
+            this.groupBoxRolls.Controls.Add(this.checkedListBoxRolls);
+            this.groupBoxRolls.Location = new System.Drawing.Point(12, 99);
+            this.groupBoxRolls.Name = "groupBoxRolls";
+            this.groupBoxRolls.Size = new System.Drawing.Size(136, 210);
+            this.groupBoxRolls.TabIndex = 5;
+            this.groupBoxRolls.TabStop = false;
+            this.groupBoxRolls.Text = "Choose rolls";
+            // 
+            // labelSelectedRolls
+            // 
+            this.labelSelectedRolls.Location = new System.Drawing.Point(6, 116);
+            this.labelSelectedRolls.Name = "labelSelectedRolls";
+            this.labelSelectedRolls.Size = new System.Drawing.Size(120, 91);
+            this.labelSelectedRolls.TabIndex = 5;
+            this.labelSelectedRolls.Text = "Nothing is selected";
+            // 
+            // linkLabelRickRoll
+            // 
+            this.linkLabelRickRoll.LinkArea = new System.Windows.Forms.LinkArea(10, 4);
+            this.linkLabelRickRoll.Location = new System.Drawing.Point(12, 73);
+            this.linkLabelRickRoll.Name = "linkLabelRickRoll";
+            this.linkLabelRickRoll.Size = new System.Drawing.Size(108, 20);
+            this.linkLabelRickRoll.TabIndex = 6;
+            this.linkLabelRickRoll.TabStop = true;
+            this.linkLabelRickRoll.Text = "Important link";
+            this.linkLabelRickRoll.UseCompatibleTextRendering = true;
+            this.linkLabelRickRoll.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRickRoll_LinkClicked);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(517, 450);
+            this.Controls.Add(this.linkLabelRickRoll);
+            this.Controls.Add(this.groupBoxRolls);
             this.Controls.Add(this.groupBoxPressKeyCheck);
             this.Controls.Add(this.groupBoxColorText);
             this.Controls.Add(this.labelCountOfTicks);
@@ -198,8 +247,17 @@
             this.groupBoxPressKeyCheck.ResumeLayout(false);
             this.groupBoxPressKeyCheck.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.timerSecondsFromStart)).EndInit();
+            this.groupBoxRolls.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.LinkLabel linkLabelRickRoll;
+
+        private System.Windows.Forms.Label labelSelectedRolls;
+
+        private System.Windows.Forms.GroupBox groupBoxRolls;
+
+        private System.Windows.Forms.CheckedListBox checkedListBoxRolls;
 
         private System.Timers.Timer timerSecondsFromStart;
         private System.Windows.Forms.Label labelCountOfTicks;
