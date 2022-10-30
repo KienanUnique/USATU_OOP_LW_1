@@ -41,8 +41,11 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.groupBoxPressKeyCheck = new System.Windows.Forms.GroupBox();
             this.textBoxKeyPressChecker = new System.Windows.Forms.TextBox();
+            this.timerSecondsFromStart = new System.Timers.Timer();
+            this.labelCountOfTicks = new System.Windows.Forms.Label();
             this.groupBoxColorText.SuspendLayout();
             this.groupBoxPressKeyCheck.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.timerSecondsFromStart)).BeginInit();
             this.SuspendLayout();
             // 
             // labelMousePositionInfo
@@ -161,6 +164,21 @@
             this.textBoxKeyPressChecker.TabIndex = 2;
             this.textBoxKeyPressChecker.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             // 
+            // timerSecondsFromStart
+            // 
+            this.timerSecondsFromStart.Enabled = true;
+            this.timerSecondsFromStart.Interval = 1000D;
+            this.timerSecondsFromStart.SynchronizingObject = this;
+            this.timerSecondsFromStart.Elapsed += new System.Timers.ElapsedEventHandler(this.timerSecondsFromStart_Elapsed);
+            // 
+            // labelCountOfTicks
+            // 
+            this.labelCountOfTicks.Location = new System.Drawing.Point(12, 54);
+            this.labelCountOfTicks.Name = "labelCountOfTicks";
+            this.labelCountOfTicks.Size = new System.Drawing.Size(157, 23);
+            this.labelCountOfTicks.TabIndex = 1;
+            this.labelCountOfTicks.Text = "Count of ticks: 0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,6 +187,7 @@
             this.ClientSize = new System.Drawing.Size(517, 450);
             this.Controls.Add(this.groupBoxPressKeyCheck);
             this.Controls.Add(this.groupBoxColorText);
+            this.Controls.Add(this.labelCountOfTicks);
             this.Controls.Add(this.labelMouseClickInfo);
             this.Controls.Add(this.labelMousePositionInfo);
             this.Location = new System.Drawing.Point(15, 15);
@@ -178,8 +197,12 @@
             this.groupBoxColorText.ResumeLayout(false);
             this.groupBoxPressKeyCheck.ResumeLayout(false);
             this.groupBoxPressKeyCheck.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize) (this.timerSecondsFromStart)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Timers.Timer timerSecondsFromStart;
+        private System.Windows.Forms.Label labelCountOfTicks;
 
         private System.Windows.Forms.TextBox textBoxKeyPressChecker;
 
