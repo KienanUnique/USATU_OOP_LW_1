@@ -241,5 +241,10 @@ namespace USATU_OOP_LW_1
                 textBoxForNewComboBoxItem.Clear();
             }
         }
+
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+            labelFormSizeChange.Text = "Form size changed";
+        }
     }
 }

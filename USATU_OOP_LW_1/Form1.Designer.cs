@@ -82,6 +82,7 @@
             this.comboBox = new System.Windows.Forms.ComboBox();
             this.panelForMovingText = new System.Windows.Forms.Panel();
             this.timerMovingTextPanelUpdate = new System.Timers.Timer();
+            this.labelFormSizeChange = new System.Windows.Forms.Label();
             this.groupBoxColorText.SuspendLayout();
             this.groupBoxPressKeyCheck.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.timerSecondsFromStart)).BeginInit();
@@ -505,12 +506,21 @@
             this.timerMovingTextPanelUpdate.SynchronizingObject = this;
             this.timerMovingTextPanelUpdate.Elapsed += new System.Timers.ElapsedEventHandler(this.timerMovingTextPanelUpdate_Elapsed);
             // 
+            // labelFormSizeChange
+            // 
+            this.labelFormSizeChange.Location = new System.Drawing.Point(205, 363);
+            this.labelFormSizeChange.Name = "labelFormSizeChange";
+            this.labelFormSizeChange.Size = new System.Drawing.Size(151, 23);
+            this.labelFormSizeChange.TabIndex = 12;
+            this.labelFormSizeChange.Text = "Forn size wasnt changed";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(711, 472);
+            this.Controls.Add(this.labelFormSizeChange);
             this.Controls.Add(this.panelForMovingText);
             this.Controls.Add(this.groupBoxDropDownList);
             this.Controls.Add(this.groupBoxButtonsEvents);
@@ -527,6 +537,7 @@
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
             this.Text = "LW 1";
+            this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseClick);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.groupBoxColorText.ResumeLayout(false);
@@ -541,6 +552,8 @@
             ((System.ComponentModel.ISupportInitialize) (this.timerMovingTextPanelUpdate)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label labelFormSizeChange;
 
         private System.Timers.Timer timerMovingTextPanelUpdate;
 
